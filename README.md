@@ -1,44 +1,33 @@
-# restaurant-reservation-front
+# Nutikas restorani reserveerimissüsteem - CGI proovitöö
 
-This template should help get you started developing with Vue 3 in Vite.
+## Tehnoloogiad
+* **Raamistik:** Vue 3 (Composition API)
+* **Ehitustööriist:** Vite
+* **API päringud:** Axios
+* **Navigatsioon:** Vue Router
 
-## Recommended IDE Setup
+## Käivitamine
+Eeldus: Arvutis on installitud [Node.js](https://nodejs.org/).
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1. **Installi vajalikud paketid:**
+   ```bash
+   npm install
+   ```
+2. **Käivita arendusserver:**
+   ```bash
+   npm run dev
+   ```
+   *Rakendus on kättesaadav aadressil: http://localhost:5173*
 
-## Recommended Browser Setup
+3. **Ühendus Backendiga:**
+   *Veendu, et Java backend jookseb aadressil http://localhost:8080.*
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Päevik ja ajakulu
 
-## Customize configuration
+### Päev 10
+* **Tegevused:** Front-endi seadistamine & git hoidla loomine 
+* API teenuste kihi loomine, kus seadistasin Axiose abil ühenduse front-endi ja peamiste back-endi teenuste vahel.
+* Balsamiq - s peamiste brauseri vaadate plaani paika panemine
+* **Ajakulu:** ~ 3 tundi
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+### AI kasutamine
