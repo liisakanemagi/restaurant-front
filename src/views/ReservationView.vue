@@ -75,7 +75,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 40vh;
+  min-height: 70vh;
 }
 
 </style>
