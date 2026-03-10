@@ -1,4 +1,4 @@
-# Nutikas restorani reserveerimissüsteem - CGI proovitöö
+# Nutikas restorani reserveerimissüsteem
 
 ## Tehnoloogiad
 * **Raamistik:** Vue 3 (Composition API)
