@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .content-container {
   margin-top: 5rem;
 }
