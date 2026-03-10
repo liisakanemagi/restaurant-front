@@ -30,4 +30,11 @@ Eeldus: Arvutis on installitud [Node.js](https://nodejs.org/).
 * Balsamiq - s peamiste brauseri vaadate plaani paika panemine
 * **Ajakulu:** ~ 3 tundi
 
+### Päev 11
+* **Tegevused:** Peamiste vaadete ja komponentide esmane ettevalmistamine (isikuparasema stiiliga tegelen hiljem)
+* Esimene asünkroone päring back-endist. Andmed liiguvad vanemkomponendist tütarkomponenti, et võimaldada restoraniplaani 
+* dünaamilist kuvamist.
+* Axiose ja Bootstrapi konfiguratsiooni vigade silumine.
+* **Ajakulu:** ~ 3 tundi
+
 ### AI kasutamine
