@@ -12,6 +12,18 @@
         <small>{{restaurantTable.capacity}}</small>
       </div>
     </div>
+
+    <div class="bar-counter" style="left: 50%; top: 15%; width: 40%; height: 12%;">
+      <span>BAAR</span>
+    </div>
+
+    <div class="door" style="left: 0; top: 50%; width: 5px; height: 20%;">
+      <span class="door-text">UKS</span>
+    </div>
+
+    <div class="wall" style="left: 0%; top: 40%; width: 20%; height: 2px;"></div>
+    <div class="wall" style="left: 80%; top: 35%; width: 20%; height: 2px;"></div>
+
   </div>
 </template>
 
@@ -77,6 +89,42 @@ export default {
   text-align: center;
   font-size: 0.8rem;
   line-height: 1.2;
+}
+
+.bar-counter {
+  position: absolute;
+  background-color: #458077;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: 2px solid #02420c;
+}
+
+.door {
+  position: absolute;
+  background-color: #02420c;
+  border: 1px solid;
+  transform: translateY(-50%);
+
+  .door-text {
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: black;
+  }
+}
+
+.wall {
+  position: absolute;
+  background-color: #02420c;
+
 }
 
 </style>
