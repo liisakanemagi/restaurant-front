@@ -4,7 +4,7 @@
       v-for="restaurantTable in restaurantTables"
       :key="restaurantTable.id"
       class ="restaurant-table-rectangle"
-
+      :style ="getRestaurantTableStyle(restaurantTable)"
     >
     </div>
   </div>
@@ -20,9 +20,23 @@ export default {
     },
   },
 
-  methods:{
+  methods: {
 
+    getRestaurantTableStyle(restaurantTable) {
 
+      const baseWidth = 8;
+      const extraWidthPerSeat = 2;
+      const dynamicWidth = baseWidth + Math.max(0, restaurantTable.capacity - 2) * extraWidthPerSeat;
+
+      return {
+        position: 'absolute',
+        left: restaurantTable.coordinateX + '%',
+        top: restaurantTable.coordinateY + '%',
+        width: dynamicWidth + '%',
+        height: '15%',
+        transform: 'translate(-50%, -50%)',
+      }
+    }
   }
 
 }
@@ -32,10 +46,12 @@ export default {
 .floor-plain-area {
   position: relative;
   width: 100%;
-  height: 60px;
+  max-width: 1000px;
+  aspect-ratio: 100 / 50;
   background-color: palegreen;
   border: 2px solid #45804d;
   border-radius: 15px;
+  margin: 0 auto;
   overflow: hidden;
   box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
 }
