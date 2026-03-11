@@ -6,6 +6,9 @@
       class ="restaurant-table-rectangle"
       :style ="getRestaurantTableStyle(restaurantTable)"
     >
+      <div class="restaurant-table-info">
+
+      </div>
     </div>
   </div>
 </template>
@@ -66,6 +69,12 @@ export default {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
+
+.restaurant-table-info {
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.2;
 }
 
 </style>
