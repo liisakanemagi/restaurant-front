@@ -7,7 +7,9 @@
       :style ="getRestaurantTableStyle(restaurantTable)"
     >
       <div class="restaurant-table-info">
-
+        <span class ="fw-bold">{{restaurantTable.tableNumber}}</span>
+        <br>
+        <small>{{restaurantTable.capacity}}</small>
       </div>
     </div>
   </div>
