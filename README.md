@@ -37,4 +37,11 @@ Eeldus: Arvutis on installitud [Node.js](https://nodejs.org/).
 * Axiose ja Bootstrapi konfiguratsiooni vigade silumine.
 * **Ajakulu:** ~ 3 tundi
 
+### Päev 12
+* **Tegevused:** Restorani plaani visualiseerimine andmebaasi koordinaatide abil
+* Õppisin protsendipõhist paigutust, aspect-ratio kasutamist, ja CSS transform-i
+* **Ajakulu:** ~ 2 tundi
+
+
 ### AI kasutamine
+* CSS-i blokkide kirjutamine ja selgitamine - See aitas kiiremini mõista seoseid JavaScripti ja visuaalse stiilimise vahel. 
