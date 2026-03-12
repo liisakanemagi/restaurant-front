@@ -59,6 +59,7 @@ export default {
           isWindowSeat: true,
           isAccessible: true,
           isPrivate: true,
+          isAvailable: true,
         },
       ],
     }
