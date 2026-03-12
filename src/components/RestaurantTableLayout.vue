@@ -5,6 +5,7 @@
       :key="restaurantTable.id"
       class ="restaurant-table-rectangle"
       :style ="getRestaurantTableStyle(restaurantTable)"
+      @click="selectRestaurantTable(restaurantTable)"
     >
       <div class="restaurant-table-info">
         <span class ="fw-bold">{{restaurantTable.tableNumber}}</span>
@@ -31,6 +32,7 @@
 <script>
 export default {
   name: 'RestaurantTableLayout',
+  emits: ['restaurant-table-selected'],
   props: {
     restaurantTables: {
       type: Array,
@@ -54,6 +56,10 @@ export default {
         height: '15%',
         transform: 'translate(-50%, -50%)',
       }
+    },
+
+    selectRestaurantTable(restaurantTable){
+      this.$emit('restaurant-table-selected', restaurantTable);
     }
   }
 
