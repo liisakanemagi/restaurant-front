@@ -11,6 +11,7 @@
         <br>
         <small>{{restaurantTable.capacity}}</small>
       </div>
+      <div class="hover-text">Broneeri</div>
     </div>
 
     <div class="bar-counter" style="left: 50%; top: 15%; width: 40%; height: 12%;">
@@ -89,6 +90,33 @@ export default {
   text-align: center;
   font-size: 0.8rem;
   line-height: 1.2;
+}
+
+.restaurant-table-rectangle:hover{
+  background-color: #7ddf88;
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,2);
+  z-index: 10;
+}
+
+.restaurant-table-rectangle:hover .restaurant-table-info{
+  opacity: 0;
+}
+
+.hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.restaurant-table-rectangle:hover .hover-text {
+  opacity: 1;
 }
 
 .bar-counter {
