@@ -42,6 +42,12 @@ Eeldus: Arvutis on installitud [Node.js](https://nodejs.org/).
 * Õppisin protsendipõhist paigutust, aspect-ratio kasutamist, ja CSS transform-i
 * **Ajakulu:** ~ 2 tundi
 
+### Päev 13
+* **Tegevused:** Saaliplaani interaktiivsus ja dünaamiline andmevahetus
+* Sündmuste edastamine laua valimiseks ning visuaalse staatuse (isAvailable) lisamine.
+* CSS konditsionaalne kujundus ja hover-efektide tekitamine ja piiramine vastavalt laua saadavusele.
+* API teenuse täiendamine päringu parameetritega (params), et siduda front-endi filtrid back-endi loogikaga.
+* **Ajakulu:** ~ 2 tundi
 
 ### AI kasutamine
-* CSS-i blokkide kirjutamine ja selgitamine - See aitas kiiremini mõista seoseid JavaScripti ja visuaalse stiilimise vahel. 
+* CSS-i blokkide kirjutamine ja selgitamine - See aitas kiiremini mõista seoseid JavaScripti ja visuaalse stiilimise vahel.
