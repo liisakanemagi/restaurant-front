@@ -30,9 +30,10 @@
       </div>
 
       <div class="col-9">
-        <RestaurantTableLayout :restaurant-tables="restaurantTables"
-                               @restaurant-table-selected = "navigateToBookingView"/>
-
+        <RestaurantTableLayout
+          :restaurant-tables="restaurantTables"
+          @restaurant-table-selected="navigateToBookingView"
+        />
       </div>
     </div>
   </div>
@@ -62,6 +63,7 @@ export default {
           isAvailable: true,
         },
       ],
+
     }
   },
   methods: {
@@ -74,10 +76,8 @@ export default {
       }
     },
 
-    navigateToBookingView(){
 
-    }
-
+    navigateToBookingView() {},
   },
   mounted() {
     this.getRestaurantTables()

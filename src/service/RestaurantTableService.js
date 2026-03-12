@@ -1,12 +1,15 @@
 import api from './axios'
 
 export default {
-  sendGetRestaurantTablesRequest() {
-    return api.get('/restaurant/tables')
-  },
-
-  sendGetFilteredTablesRequest(){
-    return api.get('/available')
+  sendGetRestaurantTablesRequest(startTime, guestCount, isPrivate, isAccessible, isWindowSeat) {
+    return api.get('/available', {
+      params: {
+        startTime: startTime,
+        guestCount: guestCount,
+        isPrivate: isPrivate,
+        isAccessible: isAccessible,
+        isWindowSeat: isWindowSeat
+      }
+    })
   }
-
 }
