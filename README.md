@@ -51,5 +51,12 @@ Eeldus: Arvutis on installitud [Node.js](https://nodejs.org/).
 * API teenuse täiendamine päringu parameetritega (params), et siduda front-endi filtrid back-endi loogikaga.
 * **Ajakulu:** ~ 4 tundi
 
+### Päev 14
+* **Tegevused:** tekstisisetuskastide ühendamine back-endiga
+* initialSearchCriteria määramine 
+* Back-endi laudade tagasamise meetodi muutmine, et külaliste arv ei oleks laudade toomiseks kohustuslik
+* **Ajakulu:** ~ 1 tund
+
 ### AI kasutamine
 * CSS-i blokkide kirjutamine ja selgitamine - See aitas kiiremini mõista seoseid JavaScripti ja visuaalse stiilimise vahel.
+* AI aitas teha meetodi toISOString().split('T')[0], et jagada LocalDateTime osadeks.
