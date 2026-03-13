@@ -115,6 +115,7 @@ export default {
 
 .restaurant-table-rectangle:not(.disabled):hover .hover-text {
   opacity: 1;
+  visibility: visible !important;
 }
 
 .restaurant-table-rectangle:not(.disabled):hover {
