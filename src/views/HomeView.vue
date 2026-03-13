@@ -4,17 +4,32 @@
       <div class="col-3">
         <div class="d-flex flex-column gap-3">
           <div class="form-floating">
-            <input type="date" class="form-control" placeholder="Kuupäev" required />
+            <input
+              v-model="InitialSearchCriteria.date"
+              @change="getRestaurantTables"
+              type="date"
+              class="form-control"
+              placeholder="Kuupäev"
+              required />
             <label> Kuupäev </label>
           </div>
 
           <div class="form-floating">
-            <input type="time" class="form-control" placeholder="Kellaaeg" required />
+            <input
+              v-model="InitialSearchCriteria.time"
+              @change="getRestaurantTables"
+              type="time"
+              class="form-control"
+              placeholder="Kellaaeg"
+              required
+            />
             <label> Kellaaeg </label>
           </div>
 
           <div class="form-floating">
             <input
+              v-model="InitialSearchCriteria.guestCount"
+              @change="getRestaurantTables"
               type="number"
               class="form-control"
               placeholder="Külaliste arv (1-8)"
@@ -64,18 +79,24 @@ export default {
         },
       ],
 
+      InitialSearchCriteria: {
+        date: new Date().toISOString().substring(0, 10),
+        time: '12:00',
+      },
     }
   },
   methods: {
     async getRestaurantTables() {
       try {
-        const response = await RestaurantTableService.sendGetRestaurantTablesRequest()
+
+        const startDateTime = `${this.InitialSearchCriteria.date}T${this.InitialSearchCriteria.time}:00`;
+
+        const response = await RestaurantTableService.sendGetRestaurantTablesRequest(startDateTime);
         this.restaurantTables = response.data
       } catch {
         navigationService.navigateToErrorView()
       }
     },
-
 
     navigateToBookingView() {},
   },
