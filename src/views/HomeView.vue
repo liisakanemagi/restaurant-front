@@ -54,6 +54,7 @@
       <div class="col-9">
         <RestaurantTableLayout
           :restaurant-tables="restaurantTables"
+          :guest-count="Number(searchCriteria.guestCount)"
           @restaurant-table-selected="navigateToBookingView"
         />
       </div>

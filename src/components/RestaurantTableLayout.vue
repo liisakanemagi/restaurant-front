@@ -4,10 +4,12 @@
       v-for="restaurantTable in restaurantTables"
       :key="restaurantTable.id"
       class="restaurant-table-rectangle"
-      :class="{ 'disabled' : !restaurantTable.isAvailable}"
+      :class="{ disabled: !restaurantTable.isAvailable }"
       :style="getRestaurantTableStyle(restaurantTable)"
       @click="selectRestaurantTable(restaurantTable)"
     >
+      <div v-if="isRecommended(restaurantTable)" class="recommended-label">Soovitatav</div>
+
       <div class="restaurant-table-info">
         <span class="fw-bold">{{ restaurantTable.tableNumber }}</span>
         <br />
@@ -38,6 +40,11 @@ export default {
       type: Array,
       required: true,
     },
+
+    guestCount: {
+      type: Number,
+      default: 0,
+    },
   },
 
   methods: {
@@ -46,7 +53,7 @@ export default {
       const extraWidthPerSeat = 2
       const dynamicWidth = baseWidth + Math.max(0, restaurantTable.capacity - 2) * extraWidthPerSeat
       const isAvailable = restaurantTable.isAvailable
-
+      const isRecommended = this.isRecommended(restaurantTable)
       return {
         position: 'absolute',
         left: restaurantTable.coordinateX + '%',
@@ -58,12 +65,25 @@ export default {
         borderColor: isAvailable ? '#02420c' : '#999999',
         cursor: isAvailable ? 'pointer' : 'not-allowed',
         opacity: isAvailable ? '1' : '0.5',
+        boxShadow: isRecommended
+          ? '0 0 15px 5px rgba(255, 215, 0, 0.7), 0 4px 6px rgba(0, 0, 0, 0.1)'
+          : '0 4px 6px rgba(0, 0, 0, 0.1)',
+        border: isRecommended,
       }
     },
 
     selectRestaurantTable(restaurantTable) {
       if (restaurantTable.isAvailable) {
         this.$emit('restaurant-table-selected', restaurantTable)
+      }
+    },
+
+    isRecommended(restaurantTable) {
+      const waste = restaurantTable.capacity - this.guestCount
+      if (restaurantTable.isAvailable && this.guestCount > 0 && waste >= 0 && waste <= 1) {
+        return true
+      } else {
+        return false
       }
     },
   },
@@ -128,7 +148,6 @@ export default {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: auto;
-
 }
 
 .hover-text {
@@ -146,6 +165,20 @@ export default {
 
 .restaurant-table-rectangle:hover .hover-text {
   opacity: 1;
+}
+
+.recommended-label {
+  position: absolute;
+  top: -20px;
+  background-color: gold;
+  color: black;
+  font-size: 0.6rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  white-space: nowrap;
+  z-index: 5;
 }
 
 .bar-counter {
