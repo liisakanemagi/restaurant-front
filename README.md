@@ -57,6 +57,14 @@ Eeldus: Arvutis on installitud [Node.js](https://nodejs.org/).
 * Back-endi laudade tagasamise meetodi muutmine, et külaliste arv ei oleks laudade toomiseks kohustuslik
 * **Ajakulu:** ~ 1 tund
 
+### Päev 15
+* **Tegevused:** Dünaamiline laua asukoha eelistuste filtri lisamine
+* Süsteem soovitab nüüd kasuatajale laudu, millel on 0-1 raisatud kohta. 
+* **Ajakulu:** ~ 2 tundi
+
+
 ### AI kasutamine
 * CSS-i blokkide kirjutamine ja selgitamine - See aitas kiiremini mõista seoseid JavaScripti ja visuaalse stiilimise vahel.
 * AI aitas teha meetodi toISOString().split('T')[0], et jagada LocalDateTime osadeks.
+* Skaleeritav andmevahetus vanema ja lapskomponendi vahel (Key-Value Payload) – See võimaldab ühel funktsioonil (filter-changed) 
+* teenindada mitut erinevat filtrit (aken, ligipääsetavus, privaatsus)
