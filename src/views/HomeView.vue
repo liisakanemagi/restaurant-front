@@ -5,18 +5,19 @@
         <div class="d-flex flex-column gap-3">
           <div class="form-floating">
             <input
-              v-model="InitialSearchCriteria.date"
+              v-model="searchCriteria.date"
               @change="getRestaurantTables"
               type="date"
               class="form-control"
               placeholder="Kuupäev"
-              required />
+              required
+            />
             <label> Kuupäev </label>
           </div>
 
           <div class="form-floating">
             <input
-              v-model="InitialSearchCriteria.time"
+              v-model="searchCriteria.time"
               @change="getRestaurantTables"
               type="time"
               class="form-control"
@@ -28,7 +29,7 @@
 
           <div class="form-floating">
             <input
-              v-model="InitialSearchCriteria.guestCount"
+              v-model="searchCriteria.guestCount"
               @change="getRestaurantTables"
               type="number"
               class="form-control"
@@ -40,7 +41,13 @@
             <label> Külaliste arv (1-8) </label>
           </div>
 
-          <preference-filter />
+          <preference-filter
+            :search-criteria="searchCriteria"
+            @filter-changed="(payload) => {
+              searchCriteria[payload.key] = payload.value;
+              getRestaurantTables()
+            }"
+          />
         </div>
       </div>
 
@@ -79,19 +86,28 @@ export default {
         },
       ],
 
-      InitialSearchCriteria: {
+      searchCriteria: {
         date: new Date().toISOString().substring(0, 10),
         time: '12:00',
+        guestCount: 0,
+        isWindowSeat: false,
+        isAccessible: false,
+        isPrivate: false,
       },
     }
   },
   methods: {
     async getRestaurantTables() {
       try {
+        const startDateTime = `${this.searchCriteria.date}T${this.searchCriteria.time}:00`
 
-        const startDateTime = `${this.InitialSearchCriteria.date}T${this.InitialSearchCriteria.time}:00`;
-
-        const response = await RestaurantTableService.sendGetRestaurantTablesRequest(startDateTime);
+        const response = await RestaurantTableService.sendGetRestaurantTablesRequest(
+          startDateTime,
+          this.searchCriteria.guestCount || null,
+          this.searchCriteria.isPrivate || null,
+          this.searchCriteria.isAccessible || null,
+          this.searchCriteria.isWindowSeat || null,
+        )
         this.restaurantTables = response.data
       } catch {
         navigationService.navigateToErrorView()
